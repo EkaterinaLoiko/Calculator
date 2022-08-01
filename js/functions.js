@@ -1,18 +1,6 @@
-export function deleteNumbers () {   
-    if (newButtons[1].element.value == 'DEL' && firstNumber !== '' && secondNumber == '') {
-        displayCalculator.innerText = firstNumber;
-        firstNumber = firstNumber.slice(0, -1);        
-        displayCalculator.innerText = firstNumber;  
-    }   
-    if (newButtons[1].element.value == 'DEL' && secondNumber !== '') {
-        displayCalculator.innerText = secondNumber;           
-        const array =  String(secondNumber).split('');
-        console.log(array);
-        array.pop();
-        displayCalculator.innerText = array.join('');
-        secondNumber = displayCalculator.innerText; 
-    }
-}
+import {firstNumber,secondNumber,sign,end} from './index.js'
+import {newButtons, buttons} from './buttons.js'
+import {displayCalculator, displayButtons} from './index.js'
 
 export function clearDisplay () {    
     let firstNumber = '';
@@ -20,7 +8,6 @@ export function clearDisplay () {
     let sign = '';
     let end = false;
     displayCalculator.innerText = '0';
-    console.log(firstNumber,secondNumber);
 }
 
 export function point() {
@@ -43,12 +30,12 @@ export function point() {
         secondNumber = displayCalculator.innerText;         
     } 
 }
+
 export function sound() {
     const audio = new Audio();
     audio.src = './sound/single-button-press.mp3';
     audio.autoplay = true;
   }
-
 
   
 
